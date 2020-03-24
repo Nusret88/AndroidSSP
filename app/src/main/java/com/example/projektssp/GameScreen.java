@@ -278,6 +278,7 @@ GameMode gameMode = new GameMode();
             });
     }
 
+    // https://stackoverflow.com/questions/15874117/how-to-set-delay-in-android
     // Delaying the unlock of buttons and hides the player and cpu's hans
     public  void delayButtons () {
         final Handler handler = new Handler();
