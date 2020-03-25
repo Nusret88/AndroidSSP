@@ -21,8 +21,6 @@ GameMode gameMode = new GameMode();
     String playerChoice;
     String cpuChoice;
 
-    int roundNum;
-
     TextView roundsNo, playerScore, cpuScore;
     Button rockButton, scissorButton, paperButton, resultButton;
     ImageView rockPlayer, scissorPlayer, paperPlayer, rockCPU, scissorCPU, paperCPU;
@@ -160,7 +158,7 @@ GameMode gameMode = new GameMode();
         cpuScore = findViewById(R.id.cpuScore);
 
         if ((playerChoice =="Rock") && (cpuChoice == "Rock")) {
-            Toast.makeText(this,   "Draw", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
             roundsNo.setText("Round " + GameDataHolder.getRounds());
         }
@@ -181,6 +179,7 @@ GameMode gameMode = new GameMode();
             playerScore.setText(GameDataHolder.getPlayer() + "");
         }
     }
+
 // game logic when player picks scissors
     public  void playerScissors() {
         roundsNo = findViewById(R.id.roundsNo);
@@ -204,7 +203,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Scissors") && (cpuChoice == "Scissors")) {
-            Toast.makeText(this,   "Draw", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
             roundsNo.setText("Round " + GameDataHolder.getRounds());
         }
@@ -232,7 +231,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Paper") && (cpuChoice == "Paper")) {
-            Toast.makeText(this,   "Draw", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
             roundsNo.setText("Round " + GameDataHolder.getRounds());
         }
@@ -267,6 +266,7 @@ GameMode gameMode = new GameMode();
             resultButton.setVisibility(View.VISIBLE); */
         }
     }
+
     // Result screen for button
     public void changeResultScreen(){
 

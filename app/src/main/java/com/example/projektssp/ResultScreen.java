@@ -3,6 +3,7 @@ package com.example.projektssp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class ResultScreen extends AppCompatActivity {
         cpuStats = findViewById(R.id.cpuStats);
 
         homeButton = findViewById(R.id.homeButton);
+        //homeButton.setBackgroundColor(Color.RED);
 
         roundStats.setText("Rounds: " + GameScreen.GameDataHolder.getRounds());
         playerStats.setText("Player: " + GameScreen.GameDataHolder.getPlayer());
@@ -50,7 +52,7 @@ public class ResultScreen extends AppCompatActivity {
         }
 
         if (GameScreen.GameDataHolder.getCpu() == GameScreen.GameDataHolder.getPlayer()) {
-            winnerStats.setText("There are no winner because it's a draw! " + "\n" + "Better luck next time!");
+            winnerStats.setText("There are no winner because it's a drawn! " + "\n" + "Better luck next time!");
         }
     }
 }
