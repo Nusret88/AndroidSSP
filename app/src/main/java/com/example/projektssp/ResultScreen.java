@@ -19,6 +19,13 @@ public class ResultScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultscreen);
+        MediaPlayer sparkle = MediaPlayer.create(
+                getApplicationContext(),
+                R.raw.sparkleresults);
+        sparkle.setVolume(0.5f, 0.5f);
+        sparkle.start();
+
+
 
         roundStats = findViewById(R.id.roundStats);
         playerStats = findViewById(R.id.playerStats);

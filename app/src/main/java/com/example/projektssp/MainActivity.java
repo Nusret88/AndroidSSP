@@ -17,9 +17,8 @@ public class MainActivity extends AppCompatActivity {
         MediaPlayer menuMusic = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.backgroundmusic);
-
-        menuMusic.start();
         menuMusic.setVolume(0.05f, 0.05f);
+        menuMusic.start();
         menuMusic.setLooping(true);
 
         // https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity

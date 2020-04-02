@@ -369,7 +369,15 @@ GameMode gameMode = new GameMode();
 
     // Resultscreen instantly
     public void startResult() {
-        startActivity(new Intent(GameScreen.this, ResultScreen.class));
+        final Handler handler = new Handler();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(GameScreen.this, ResultScreen.class));
+            }
+        }, 2000);
+
     }
 
 
