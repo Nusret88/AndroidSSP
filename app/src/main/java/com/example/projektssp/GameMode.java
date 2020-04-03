@@ -1,11 +1,13 @@
 package com.example.projektssp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -23,11 +25,11 @@ public class GameMode extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamemode);
-        MainActivity mainActivity = new MainActivity();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeActionContentDescription("Hej");
 
         gameModeStart = findViewById(R.id.gameModeStart);
         roundsNo = findViewById(R.id.roundsNo);
-
 
         gameModeStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,23 @@ public class GameMode extends AppCompatActivity {
 
             }
         });
+    }
+
+    /* Android back button on the bottom
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    } */
+
+    // Android back button arrow at the top left
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                super.onBackPressed();
+                break;
+        }
+        return true;
     }
 
     // Radiogroup and the buttons, and what happens when selecting them
