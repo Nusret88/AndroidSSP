@@ -159,7 +159,7 @@ GameMode gameMode = new GameMode();
         cpuScore = findViewById(R.id.cpuScore);
 
         if ((playerChoice =="Rock") && (cpuChoice == "Rock")) {
-            rockxrock();
+            rockxrockSound();
 
             Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
@@ -167,7 +167,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Rock") && (cpuChoice == "Paper")) {
-            rockxpaper();
+            rockxpaperSound();
 
             Toast.makeText(this,   "You got eaten by paper", Toast.LENGTH_SHORT).show();
             GameDataHolder.cpu++;
@@ -177,7 +177,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Rock") && (cpuChoice == "Scissors")) {
-            scissorsxrock();
+            scissorsxrockSound();
 
             Toast.makeText(this,   "You crushed some scissors", Toast.LENGTH_SHORT).show();
             GameDataHolder.player++;
@@ -194,7 +194,7 @@ GameMode gameMode = new GameMode();
         cpuScore = findViewById(R.id.cpuScore);
 
         if ((playerChoice =="Scissors") && (cpuChoice == "Rock")) {
-            scissorsxrock();
+            scissorsxrockSound();
 
             Toast.makeText(this,   "You lost to Rock", Toast.LENGTH_SHORT).show();
             GameDataHolder.cpu++;
@@ -204,7 +204,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Scissors") && (cpuChoice == "Paper")) {
-            paperxscissors();
+            paperxscissorsSound();
 
             Toast.makeText(this,   "You cut the paper", Toast.LENGTH_SHORT).show();
             GameDataHolder.player++;
@@ -214,7 +214,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Scissors") && (cpuChoice == "Scissors")) {
-            scissorsxscissors();
+            scissorsxscissorsSound();
 
             Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
@@ -228,7 +228,7 @@ GameMode gameMode = new GameMode();
         cpuScore = findViewById(R.id.cpuScore);
 
         if ((playerChoice =="Paper") && (cpuChoice == "Rock")) {
-            rockxpaper();
+            rockxpaperSound();
 
             Toast.makeText(this,   "You enveloped paper", Toast.LENGTH_SHORT).show();
             GameDataHolder.player++;
@@ -238,7 +238,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Paper") && (cpuChoice == "Scissors")) {
-            paperxscissors();
+            paperxscissorsSound();
 
             Toast.makeText(this,   "You got cut by scissors", Toast.LENGTH_SHORT).show();
             GameDataHolder.cpu++;
@@ -248,7 +248,7 @@ GameMode gameMode = new GameMode();
         }
 
         if ((playerChoice =="Paper") && (cpuChoice == "Paper")) {
-            paperxpaper();
+            paperxpaperSound();
 
             Toast.makeText(this,   "Drawn", Toast.LENGTH_SHORT).show();
             GameDataHolder.rounds++;
@@ -324,42 +324,43 @@ GameMode gameMode = new GameMode();
         }, 2000);
     }
 
-    public void rockxrock () {
+    // From the school presentation
+    public void rockxrockSound () {
         MediaPlayer rxr = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.rockxrock);
         rxr.start();
     }
 
-    public void rockxpaper () {
+    public void rockxpaperSound () {
         MediaPlayer rxp = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.rockxpaper);
         rxp.start();
     }
 
-    public void scissorsxscissors () {
+    public void scissorsxscissorsSound () {
         MediaPlayer sxs = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.scissorsxscissors);
         sxs.start();
     }
 
-    public void scissorsxrock () {
+    public void scissorsxrockSound () {
         MediaPlayer sxr = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.scissorsxrock);
         sxr.start();
     }
 
-    public void paperxpaper () {
+    public void paperxpaperSound () {
         MediaPlayer pxp = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.paperxpaper);
         pxp.start();
     }
 
-    public void paperxscissors () {
+    public void paperxscissorsSound () {
         MediaPlayer pxs = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.paperxscissors);
@@ -374,6 +375,7 @@ GameMode gameMode = new GameMode();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                AudioPlay.stopAudio();
                 startActivity(new Intent(GameScreen.this, ResultScreen.class));
             }
         }, 2000);
