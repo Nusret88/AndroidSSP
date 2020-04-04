@@ -14,17 +14,17 @@ public class ResultScreen extends AppCompatActivity {
     TextView roundStats, playerStats, cpuStats, winnerStats;
     Button homeButton;
 
-    // Nusret
+    // Ibrahim
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultscreen);
+
         MediaPlayer sparkle = MediaPlayer.create(
                 getApplicationContext(),
                 R.raw.sparkleresults);
         sparkle.setVolume(0.5f, 0.5f);
         sparkle.start();
-
 
 
         roundStats = findViewById(R.id.roundStats);
@@ -48,7 +48,7 @@ public class ResultScreen extends AppCompatActivity {
         });
     }
 
-    // Nusret
+    // Ibrahim
         public void winnerText () {
         winnerStats = findViewById(R.id.winnerStats);
 

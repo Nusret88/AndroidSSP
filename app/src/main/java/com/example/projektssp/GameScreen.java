@@ -48,7 +48,7 @@ public class GameScreen extends AppCompatActivity {
         });*/
 }
 
-    // Nusret
+    // Ibrahim
 // CPU randomly picks a hand
     public void handCPU () {
         Random hand = new Random();
