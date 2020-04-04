@@ -3,7 +3,6 @@ package com.example.projektssp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +14,7 @@ public class ResultScreen extends AppCompatActivity {
     TextView roundStats, playerStats, cpuStats, winnerStats;
     Button homeButton;
 
+    // Nusret
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,8 @@ public class ResultScreen extends AppCompatActivity {
         });
     }
 
-    public void winnerText () {
+    // Nusret
+        public void winnerText () {
         winnerStats = findViewById(R.id.winnerStats);
 
         if (GameScreen.GameDataHolder.getCpu() > GameScreen.GameDataHolder.getPlayer()) {

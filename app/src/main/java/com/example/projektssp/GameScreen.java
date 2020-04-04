@@ -17,7 +17,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameScreen extends AppCompatActivity {
-GameMode gameMode = new GameMode();
 
     String playerChoice;
     String cpuChoice;
@@ -26,6 +25,7 @@ GameMode gameMode = new GameMode();
     Button rockButton, scissorButton, paperButton, resultButton;
     ImageView rockPlayer, scissorPlayer, paperPlayer, rockCPU, scissorCPU, paperCPU;
 
+    // Nusret
     // The game
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +38,17 @@ GameMode gameMode = new GameMode();
         resultButton.setEnabled(false);
         resultButton.setVisibility(View.GONE);
 
-        resultButton.setOnClickListener(new View.OnClickListener() {
+
+        // result screen button
+       /* resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 changeResultScreen();
             }
-        });
+        });*/
 }
 
+    // Nusret
 // CPU randomly picks a hand
     public void handCPU () {
         Random hand = new Random();
@@ -75,7 +78,7 @@ GameMode gameMode = new GameMode();
         }
     }
 
-
+    // Nusret
     public void engienSSP() {
         rockButton = findViewById(R.id.rockButton);
         scissorButton = findViewById(R.id.scissorButton);
@@ -152,6 +155,7 @@ GameMode gameMode = new GameMode();
 
     }
 
+    // Nusret
     // Game logic when player picks rock
     public void playerRock() {
         roundsNo = findViewById(R.id.roundsNo);
@@ -187,6 +191,7 @@ GameMode gameMode = new GameMode();
         }
     }
 
+    // Nusret
 // game logic when player picks scissors
     public  void playerScissors() {
         roundsNo = findViewById(R.id.roundsNo);
@@ -221,6 +226,8 @@ GameMode gameMode = new GameMode();
             roundsNo.setText("Round " + GameDataHolder.getRounds());
         }
     }
+
+    // Nusret
 // game logic when player picks paper
     public void playerPaper() {
         roundsNo = findViewById(R.id.roundsNo);
@@ -256,6 +263,8 @@ GameMode gameMode = new GameMode();
         }
     }
 
+    // Nusret
+    // Determines who is the winner
     public void gameStateCheck() {
         roundsNo = findViewById(R.id.roundsNo);
         playerScore = findViewById(R.id.playerScore);
@@ -286,7 +295,9 @@ GameMode gameMode = new GameMode();
         }
     }
 
-    // Result screen for button
+    // Nusret
+    // Go to result screen with a button
+    /*
     public void changeResultScreen(){
 
             resultButton.setOnClickListener(new View.OnClickListener() {
@@ -295,10 +306,11 @@ GameMode gameMode = new GameMode();
                     startActivity(new Intent(GameScreen.this, ResultScreen.class));
                 }
             });
-    }
+    }*/
 
+    // Nusret
     // https://stackoverflow.com/questions/15874117/how-to-set-delay-in-android
-    // Delaying the unlock of buttons and hides the player and cpu's hans
+    // Delaying the unlock of buttons and hides the player and cpu's hands
     public  void delayButtons () {
         final Handler handler = new Handler();
 
@@ -324,7 +336,8 @@ GameMode gameMode = new GameMode();
         }, 2000);
     }
 
-    // From the school presentation
+    // Nusret
+    // From the school presentation, plays a sound effect
     public void rockxrockSound () {
         MediaPlayer rxr = MediaPlayer.create(
                 getApplicationContext(),
@@ -367,8 +380,8 @@ GameMode gameMode = new GameMode();
         pxs.start();
     }
 
-
-    // Resultscreen instantly
+    // Nusret
+    // 2 seconds after calling this method it goes to the result screen
     public void startResult() {
         final Handler handler = new Handler();
 
@@ -382,8 +395,8 @@ GameMode gameMode = new GameMode();
 
     }
 
-
-    // DataHolder for all the important information that needs to be transferred to the ResultScreen
+    // Nusret
+    // DataHolder for all the important information that needs to be transferred to other screens
     public static class GameDataHolder {
         private static int player;
         private static int cpu;

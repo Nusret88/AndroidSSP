@@ -15,7 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class GameMode extends AppCompatActivity {
-    // intent för att skicka över roundNum (roundNum kanske inte behöver skickas) och bestOf till nästa skärm
+    // Nusret
 
     Button gameModeStart;
     RadioGroup roundsNo;
@@ -40,12 +40,14 @@ public class GameMode extends AppCompatActivity {
         });
     }
 
+    // Nusret
     /* Android back button on the bottom
     @Override
     public void onBackPressed() {
         super.onBackPressed();
     } */
 
+    // Nusret
     // Android back button arrow at the top left
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -57,6 +59,8 @@ public class GameMode extends AppCompatActivity {
         return true;
     }
 
+    // Nusret
+    // YouTube and https://stackoverflow.com/questions/39715867/android-how-to-enable-a-button-if-a-radio-button-is-checked
     // Radiogroup and the buttons, and what happens when selecting them
     public void radioButtonCheck (View v) {
         int radioId = roundsNo.getCheckedRadioButtonId();
@@ -64,7 +68,6 @@ public class GameMode extends AppCompatActivity {
         radioButton = findViewById(radioId);
 
         Toast.makeText(this,  radioButton.getText() + " rounds",Toast.LENGTH_LONG).show();
-
 
         gameModeStart.setEnabled(true);
 
@@ -127,6 +130,7 @@ public class GameMode extends AppCompatActivity {
 
     }
 
+    // Nusret
     // https://stackoverflow.com/questions/4878159/whats-the-best-way-to-share-data-between-activities
     // DataHolder to save data and use in another activity
     public static class DataHolder {

@@ -5,7 +5,9 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 
+// Nusret
 // https://stackoverflow.com/questions/16690057/how-can-i-stop-media-player-in-another-activity
+// Method to start playing any sound in any other class and method
 public class AudioPlay {
 
     public static MediaPlayer backgroundMusic;
@@ -23,6 +25,7 @@ public class AudioPlay {
         }
     }
 
+    // A method to stop all sound that is being activated by this class
     public static void stopAudio(){
         isplayingAudio = false;
         backgroundMusic.stop();
